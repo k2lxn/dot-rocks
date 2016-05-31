@@ -1,0 +1,23 @@
+canvas {
+	width: 350px;
+	height: 350px;
+}
+
+
+
+/*
+ * MEDIA QUERIES
+ */
+
+
+/* Smartphones, up to iPhone 6+ (Portrait)
+ * Single column layout */
+@media only screen and (max-width: 450px) {
+}
+
+
+/* Smartphones (Landscape) AND Tablets (Portrait)
+ * Two-column layout */
+@media only screen and (max-width: 768px) {
+
+}

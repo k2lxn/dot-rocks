@@ -1,0 +1,51 @@
+/*
+ * TYPOGRAPHY
+ */
+
+h2 {
+	font-family: 'Alfa Slab One', serif;
+} 
+
+
+/*
+ * LAYOUT
+ */
+
+header {
+	width: 60%;
+	margin: 15px auto;
+	background-color: #CCCCCC;
+}
+
+#title {
+	float: left;
+}
+
+#author {
+	float: left;
+}
+
+#grid {
+	clear: both;
+}
+
+
+
+
+
+/*
+ * MEDIA QUERIES
+ */
+
+
+/* Smartphones, up to iPhone 6+ (Portrait)
+ * Single column layout */
+@media only screen and (max-width: 450px) {
+}
+
+
+/* Smartphones (Landscape) AND Tablets (Portrait)
+ * Two-column layout */
+@media only screen and (max-width: 768px) {
+
+}
