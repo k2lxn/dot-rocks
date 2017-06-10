@@ -15,6 +15,7 @@
 
 interface JavaScript {
 	// declare js functions used by this Processing script
+	string getColor();
 } 
 
 void bindJavascript(JavaScript js) {
@@ -28,7 +29,26 @@ JavaScript javascript;
 /*
  * Function definitions
  */
-
+ 
+void setFrameColor() {
+	var hex;
+	
+	if (javascript != null) { 
+		hex = javascript.getColor(); // Returns current "colorChoice" js var
+	}
+	
+	var red = hex.substring(2,4);
+	var green = hex.substring(4,6);
+	var blue = hex.substring(6,8);
+	
+	frameColor = color(unhex(red),unhex(green),unhex(blue));
+	
+	// Offset the movement that happens with the redraw
+	centerX0 -= 10;
+	centerX1 -= 10;
+	wheelRotation -= 10;
+}
+ 
 // Draw wheel with center at (x,y)
 
 function wheel(x,y,angle) {   
@@ -170,7 +190,7 @@ void setup() {
 
 
 void draw() {
-
+	
 	background(#CCCCCC);
 	
 	wheel(centerX0,centerY0,wheelRotation);

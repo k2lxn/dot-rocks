@@ -1,6 +1,75 @@
+p {
+	font-family: Arial, sans-serif;
+	font-size: 1.3em;
+	margin-top: 20px;
+	text-align: center;
+}
+
+#content {
+	width: 360px;
+	margin: 0px auto;
+}
+
+#swatches {
+	width: 360px;
+}
+
+.swatch {
+	width: 20px;
+	height: 20px;
+	float: left;
+	margin: 20px 5px;
+	background-color: turquoise;
+}
+
 canvas {
 	width: 350px;
 	height: 350px;
+	clear: both;
+	display: block;
+	margin: 0px 5px;
+}
+
+
+/*
+ * Swatch colors 
+ */
+
+#bk000000 {
+	background-color: #000000;
+}
+#whFFFFFF {
+	background-color: #FFFFFF;
+}
+#rdFF0000 {
+	background-color: #FF0000;
+} 
+#orFF6600 {
+	background-color: #FF6600;
+}
+#ywFFD119 {
+	background-color: #FFD119;
+}
+#gr00bA2E {
+	background-color: #00bA2E;
+}
+#dg003300 {
+	background-color: #003300;
+}
+#lb0093B8 {
+	background-color: #0093B8;
+}
+#bl000099 {
+	background-color: #000099;
+}
+#in660066 {
+	background-color: #660066;
+}
+#lvC671FF {
+	background-color: #C671FF;
+}
+#pkFF5C9D {
+	background-color: #FF5C9D;
 }
 
 
@@ -21,3 +90,11 @@ canvas {
 @media only screen and (max-width: 768px) {
 
 }
+
+
+
+
+
+
+
+
