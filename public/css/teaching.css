@@ -4,6 +4,7 @@
 	box-sizing: content-box;
 }
 
+
 html, body {
 	height: 100%;
 
@@ -15,7 +16,8 @@ h1, p {
 	position: absolute;
 	padding: 0 15px;
 
-	color: #eee;
+	//color: #eee;
+	color: #404040;
 	//background-color: #fff;
 }
 

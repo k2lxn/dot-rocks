@@ -1,0 +1,101 @@
+
+html, body, .viewport {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.viewport {
+	position: fixed;
+	top: 0;
+	overflow: scroll;
+	/*pointer-events: none;*/
+	
+	box-sizing: border-box;
+	//border: 2px solid #000;
+}
+
+.scroll-trigger-container {
+	overflow: scroll;
+	z-index: 1000;
+}	
+.scroll-trigger {
+	width: 100%;
+	height: 400vw;  // fallback - should be set in js
+}
+
+#slideshow {
+	height: 100%;
+	width: 400%;
+	display: flex;
+
+	background: #eee;
+	border-right: 2px solid #ff0000;
+
+	/*pointer-events: none;*/
+}
+
+.slide {
+	content: "aaa";
+	width: 25%;
+	height: 100%;
+	position: relative;
+
+	border-right: 1px solid #000;
+}
+
+
+
+h1, p {
+	font-family: Helvetica, sans-serif;
+	padding: 0 15px;
+	margin: 0;
+	position: absolute;
+	top: 0;
+}
+
+h1 {
+	font-size: 2em;
+	line-height: 2em;
+	top: 60px;
+	width: 80%;
+}
+
+p {
+	top: 40%;
+	right: 0;
+	width: 60%;
+	text-align: right;
+
+	//background-color: rgba( 255, 255, 255, .6);
+}
+
+.flip {
+	-webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+}
+
+.illustration-container {
+	display: flex;
+	flex-direction: column;
+}
+
+.illustration:first-of-type {
+	margin-bottom: -10%;
+}
+.illustration:not(:first-of-type) {
+	margin: -10% 0;
+}
+
+.illustration.right {
+	display: flex;
+	flex-direction: row-reverse;
+}
+
+
+
+
+
+
+

@@ -50,9 +50,6 @@ body {
 
 	border-right: 1px solid #000;
 }
-.slide:not(:first-of-type) {
-	//margin-left: -5px;
-}
 
 /*
 .slide:first-of-type {
