@@ -21,8 +21,13 @@ function set_snap_to() {
 				return ( slide_width * i ) ;
 			}
 		}
+
 	} else {
-		// do an inverse calculation
+		for ( i=total_slides; i > -1 ; i-- ) {	
+			if ( slide_width * i < last_scrollTop ) {
+				return ( slide_width * i ) ;
+			}
+		}
 	}
 }
 
@@ -36,6 +41,8 @@ function scroll_to_snap() {
 		left: -(snap_to)
 	}, scroll_speed, function(){
 		$(".scroll-trigger-container").scrollTop( snap_to );
+		last_scrollTop = snap_to ; 
+
 		// reenable scrolling after a short timeout
 		setTimeout(function(){
 			set_scroll();
@@ -59,7 +66,6 @@ function set_scroll() {
 		if ( offset >= snap_to - slide_width * .9 ) {
 			scroll_to_snap();
 		}
-		
 	});
 }
 
@@ -70,7 +76,7 @@ $(document).ready(function(){
 	scroll_direction = "left";
 	last_scrollTop = 0;
 
-	snap_to = set_snap_to();
+	snap_to = slide_width;
 
 	set_scroll();
 	
@@ -80,8 +86,8 @@ $(document).ready(function(){
 $(window).resize(function(){
 	slide_width = $('#slideshow').width() / total_slides ;
 
-	snap_to = set_snap_to();
-	set_scroll();
+	//snap_to = set_snap_to();
+	//set_scroll();
 	
 });
 
