@@ -1,1 +1,6 @@
 .DS_Store
+image_dev/*.jpg
+image_dev/*.gif
+image_dev/*.png
+
+
