@@ -11,6 +11,12 @@ function scroll_right(){
 		$('#slideshow').animate({
 			left: scroll_to
 		}, scroll_speed );
+
+		$("#scroll-left").show();
+		
+		if ( Math.abs(scroll_to) >= ( $('#slideshow').width() - slide_width) ) {
+			$("#scroll-right").hide();
+		}
 	}
 }
 
@@ -24,6 +30,12 @@ function scroll_left(){
 		$('#slideshow').animate({
 			left: scroll_to
 		}, scroll_speed );
+	}
+
+	$("#scroll-right").show();
+	
+	if ( Math.abs(curr_scroll) <= slide_width ) {
+		$("#scroll-left").hide();
 	}
 }
 
