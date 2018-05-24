@@ -60,17 +60,32 @@ p {
 	font-weight: bold;
 	position: absolute;
 	top: 50%;
+	cursor: default;
 
 	background: cyan;
 	padding: 0 10px;
 }
 #scroll-left {
 	left: 15px;
+	display: none;
 }
 #scroll-right {
 	right: 15px;
 }
 
 
+/* * * drawings * * */
+#laptop {
+	width: calc(985px * .22);
+	position: absolute;
+	top: 50%;
+	left: 25%;
+}
 
+#main-figure {
+	width: calc(884px * .22);
+	position: absolute;
+	top: 27%;
+	left: 41%;
+}
 
