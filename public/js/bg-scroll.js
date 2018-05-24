@@ -9,11 +9,15 @@ function scroll_right(){
 
 	if ( Math.abs(scroll_to) < $('#slideshow').width() ) {
 		// block other clicks until animation executes (rebind click in animation callback)
+		$("#scroll-left").unbind("click");
 		$("#scroll-right").unbind("click");
 
 		$('#slideshow').animate({
 			left: scroll_to
-		}, scroll_speed, function(){ $("#scroll-right").click( scroll_right ) });
+		}, scroll_speed, function(){ 
+			$("#scroll-left").click( scroll_left ) ;
+			$("#scroll-right").click( scroll_right ) ;
+		});
 
 		curr_slide++;
 
@@ -35,10 +39,14 @@ function scroll_left(){
 	if ( Math.abs(curr_scroll) >= slide_width ) {
 		// block other clicks until animation executes (rebind click in animation callback)
 		$("#scroll-left").unbind("click");
+		$("#scroll-right").unbind("click");
 
 		$('#slideshow').animate({
 			left: scroll_to
-		}, scroll_speed, function(){ $("#scroll-left").click( scroll_left ) });
+		}, scroll_speed, function(){ 
+			$("#scroll-left").click( scroll_left ) ;
+			$("#scroll-right").click( scroll_right ) ;
+		});
 	}
 
 	curr_slide--;
