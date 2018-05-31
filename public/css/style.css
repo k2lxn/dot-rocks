@@ -91,3 +91,10 @@ p {
 	z-index: 1;
 }
 
+#coffee-mug {
+	width: calc(281px * .22);
+	position: absolute;
+	top: 59%;
+	left: 18%;
+	z-index: 10;
+}
