@@ -116,6 +116,14 @@ p {
 	z-index: 0;
 }
 
+#window {
+	width: calc(1842px * .22);
+	position: absolute;
+	top: 2%;
+	left: 6%;
+	z-index: 0;
+}
+
 
 
 
