@@ -96,5 +96,13 @@ p {
 	position: absolute;
 	top: 59%;
 	left: 18%;
-	z-index: 10;
+	z-index: 20;
+}
+
+#notebook {
+	width: calc(979px * .22);
+	position: absolute;
+	top: 70%;
+	left: 55%;
+	z-index: 20;
 }
