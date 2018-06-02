@@ -62,6 +62,7 @@ p {
 	position: absolute;
 	top: 50%;
 	cursor: default;
+	z-index: 100;
 
 	background: cyan;
 	padding: 0 10px;
@@ -79,16 +80,18 @@ p {
 #laptop {
 	width: calc(985px * .22);
 	position: absolute;
-	top: 50%;
-	left: 25%;
+	top: 55%;
+	//left: 25%;
+	left: 35%;
 	z-index: 10;
 }
 
 #main-figure {
-	width: calc(884px * .22);
+	width: calc(980px * .22);
 	position: absolute;
-	top: 27%;
-	left: 41%;
+	top: 29%;
+	//left: 41%;
+	left: 51%;
 	z-index: 1;
 }
 
@@ -96,7 +99,8 @@ p {
 	width: calc(281px * .22);
 	position: absolute;
 	top: 59%;
-	left: 18%;
+	//left: 18%;
+	left: 28%;
 	z-index: 20;
 }
 
@@ -104,7 +108,8 @@ p {
 	width: calc(979px * .22);
 	position: absolute;
 	top: 70%;
-	left: 55%;
+	//left: 55%;
+	left: 65%;
 	z-index: 20;
 }
 
@@ -124,7 +129,13 @@ p {
 	z-index: 0;
 }
 
-
+#customer {
+	width: calc(2510px * .22);
+	position: absolute;
+	top: 10%;
+	left: 10%;
+	z-index: 1;
+}
 
 
 
