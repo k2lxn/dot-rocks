@@ -2,6 +2,21 @@ var total_slides = 4;
 var slide_width;
 var curr_slide;
 
+(function( $ ) {
+ 
+    $.fn.costumeChange = function( frame ) {
+ 
+        frame = "frame" + frame ;
+        var new_style = this.data( frame + "-style" ) ;
+
+		this.hide().attr("src", "../image_dev/new/" +  this.data(frame) ).show().attr("id", new_style) ;
+
+ 		
+ 		
+    };
+ 
+}( jQuery ));
+
 function scroll_right(){
 	var curr_scroll = $("#slideshow").offset().left;
 	var scroll_to = curr_scroll - slide_width;
@@ -64,7 +79,8 @@ function stage_illustrations() {
 	console.log("curr_slide: " + curr_slide);
 	$(".illustration").each( function() {
 
-		var offstage_left =  ( slide_width / 2 ) + $(this).width() ;
+		var original_left = ( $(window).width() / 2 ) + $(this).data("left") ;
+		//var offstage_left =  ( slide_width / 2 ) + $(this).width() ;
 		var duration = slide_width * 1.5 ;
 		
 		// disappears
@@ -72,7 +88,7 @@ function stage_illustrations() {
 			$(this).data("reappearon", curr_slide - 1 );
 			
 			$(this).animate({
-				left: -(offstage_left)
+				left: -(original_left)
 			}, duration, function(){
 				$(this).css("visibility", "hidden");
 			});
@@ -83,13 +99,22 @@ function stage_illustrations() {
 			$(this).css("visibility", "visible");
 
 			$(this).animate({
-				left: $(this).data("left")
+				left: original_left
 			}, duration );
 		}
 
+		// costume changes
+		if ( $(this).data("changeon") === curr_slide ) {
+			$(this).costumeChange( curr_slide );
+		}
 	});
 }
-
+/*
+function costume_change(frame){
+	frame = "frame" + frame ;
+	$(this).attr("src", "../image_dev/new/" +  $(this).data(frame) )
+}
+*/
 
 /* READY */
 $(document).ready(function(){

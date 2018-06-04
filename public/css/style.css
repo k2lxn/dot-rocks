@@ -64,7 +64,7 @@ p {
 	cursor: default;
 	z-index: 100;
 
-	background: cyan;
+	//background: cyan;
 	padding: 0 10px;
 }
 #scroll-left {
@@ -82,7 +82,8 @@ p {
 	position: absolute;
 	top: 55%;
 	//left: 25%;
-	left: 45%;
+	//left: 40%;
+	left: calc(50% - 100px);
 	z-index: 10;
 }
 
@@ -91,7 +92,8 @@ p {
 	position: absolute;
 	top: 29%;
 	//left: 41%;
-	left: 56%;
+	//left: 56%;
+	left: calc(50% + 70px);
 	z-index: 1;
 }
 
@@ -100,8 +102,11 @@ p {
 	position: absolute;
 	top: 59%;
 	//left: 18%;
-	left: 40%;
+	//left: 32%;
+	left: calc(50% - 190px);
 	z-index: 20;
+
+	//filter: hue-rotate(100deg);
 }
 
 #notebook {
@@ -109,7 +114,8 @@ p {
 	position: absolute;
 	top: 70%;
 	//left: 55%;
-	left: 65%;
+	//left: 65%;
+	left: calc(50% + 150px);
 	z-index: 20;
 }
 
