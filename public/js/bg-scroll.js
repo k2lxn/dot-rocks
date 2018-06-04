@@ -8,11 +8,11 @@ var curr_slide;
  
         frame = "frame" + frame ;
         var new_style = this.data( frame + "-style" ) ;
+        var new_src = "../image_dev/new/" +  this.data(frame) ;
 
-		this.hide().attr("src", "../image_dev/new/" +  this.data(frame) ).show().attr("id", new_style) ;
-
- 		
- 		
+		this.fadeOut( 400, function(){
+			$(this).attr("src", new_src).attr("id", new_style);
+		}).fadeIn( 100 );
     };
  
 }( jQuery ));
