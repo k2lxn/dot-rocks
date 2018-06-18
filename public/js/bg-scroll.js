@@ -9,6 +9,7 @@ function scroll_right(){
 	var scroll_speed = slide_width * .75;
 
 	if ( Math.abs(scroll_to) < $('#slideshow').width() ) {
+		console.log("scrolling right");
 		// block other clicks until animation executes (rebind click in animation callback)
 		$("#scroll-left").unbind("click");
 		$("#scroll-right").unbind("click");
@@ -38,6 +39,7 @@ function scroll_left(){
 	var scroll_speed = slide_width * .75;
 
 	if ( Math.abs(curr_scroll) >= slide_width ) {
+		console.log("scrolling left");
 		// block other clicks until animation executes (rebind click in animation callback)
 		$("#scroll-left").unbind("click");
 		$("#scroll-right").unbind("click");
@@ -104,6 +106,18 @@ function stage_illustrations() {
 	});
 }
 
+function keyboard_navigation( e ) {
+    e = e || window.event ;
+
+    var mouse_down_event = new MouseEvent( "mousedown", { 'view': window, 'bubbles': true, 'cancelable': true } ) ;
+    if( e.keyCode==39 || e.keyCode==32 ) { // right arrow or space
+        e.preventDefault();
+        scroll_right();
+    } else if( e.keyCode==37 ) { // left arrow
+        e.preventDefault();
+        scroll_left();
+    }
+}
 
 
 
@@ -116,6 +130,8 @@ $(document).ready(function(){
 	
 	$("#scroll-right").click( scroll_right );
 	$("#scroll-left").click( scroll_left );
+
+	document.addEventListener( "keydown", keyboard_navigation ) ;    
 	
 });
 
