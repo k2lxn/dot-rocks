@@ -182,3 +182,15 @@ p {
     transform: scaleX(-1);
 }
 
+#whiteboard {
+	width: calc(1148px * .22);
+	position: absolute;
+	top: calc(50% - 450px);
+	//right: 0;
+	left: calc(50% + 300px);
+	z-index: 0;
+}
+
+
+
+

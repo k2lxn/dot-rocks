@@ -9,7 +9,6 @@ function scroll_right(){
 	var scroll_speed = slide_width * .75;
 
 	if ( Math.abs(scroll_to) < $('#slideshow').width() ) {
-		console.log("scrolling right");
 		// block other clicks until animation executes (rebind click in animation callback)
 		$("#scroll-left").unbind("click");
 		$("#scroll-right").unbind("click");
@@ -39,7 +38,6 @@ function scroll_left(){
 	var scroll_speed = slide_width * .75;
 
 	if ( Math.abs(curr_scroll) >= slide_width ) {
-		console.log("scrolling left");
 		// block other clicks until animation executes (rebind click in animation callback)
 		$("#scroll-left").unbind("click");
 		$("#scroll-right").unbind("click");
