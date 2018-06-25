@@ -149,6 +149,15 @@ p {
 	z-index: 1;
 }
 
+#computer-towers {
+	width: calc(1300px * .22);
+	position: absolute;
+	top: 25%;
+	//left: 10%;
+	left: calc(50% - 600px);
+	z-index: 0;
+}
+
 /*
 #teaching {
 	width: calc(4366px * .22);
