@@ -141,7 +141,8 @@ p {
 }
 
 #customer {
-	width: calc(2510px * .22);
+	//width: calc(2510px * .22);
+	width: calc(1270px * .22);
 	position: absolute;
 	top: 10%;
 	//left: 10%;
