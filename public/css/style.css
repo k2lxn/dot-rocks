@@ -83,7 +83,8 @@ p {
 #laptop {
 	width: calc(985px * .22);
 	position: absolute;
-	top: 55%;
+	//top: 55%;
+	top: calc(50% + 10px);
 	//left: 25%;
 	//left: 40%;
 	left: calc(50% - 100px);
@@ -93,7 +94,8 @@ p {
 #main-figure {
 	width: calc(980px * .22);
 	position: absolute;
-	top: 29%;
+	//top: 29%;
+	top: calc(50% - 150px);
 	//left: 41%;
 	//left: 56%;
 	left: calc(50% + 70px);
@@ -103,7 +105,8 @@ p {
 #coffee-mug {
 	width: calc(281px * .22);
 	position: absolute;
-	top: 65%;
+	//top: 65%;
+	top: calc(50% + 90px);
 	//left: 18%;
 	//left: 32%;
 	left: calc(50% - 180px);
@@ -115,7 +118,8 @@ p {
 #notebook {
 	width: calc(979px * .22);
 	position: absolute;
-	top: 70%;
+	//top: 70%;
+	top: calc(50% + 150px);
 	//left: 55%;
 	//left: 65%;
 	left: calc(50% + 150px);
@@ -125,7 +129,8 @@ p {
 #bookcase {
 	width: calc(1250px * .22);
 	position: absolute;
-	top: 5%;
+	//top: 5%;
+	top: calc(50% - 310px);
 	//left: 65%;
 	left: calc(50% + 200px);
 	z-index: 0;
@@ -134,7 +139,8 @@ p {
 #window {
 	width: calc(1842px * .22);
 	position: absolute;
-	top: 2%;
+	//top: 2%;
+	top: calc(50% - 335px);
 	//left: 6%;
 	left: calc(50% - 400px);
 	z-index: 0;
@@ -144,7 +150,8 @@ p {
 	//width: calc(2510px * .22);
 	width: calc(1270px * .22);
 	position: absolute;
-	top: 10%;
+	//top: 10%;
+	top: calc(50% - 280px);
 	//left: 10%;
 	left: calc(50% - 400px);
 	z-index: 1;
@@ -153,9 +160,10 @@ p {
 #computer-towers {
 	width: calc(1300px * .22);
 	position: absolute;
-	top: 25%;
+	//top: 25%;
+	top: calc(50% - 180px);
 	//left: 10%;
-	left: calc(50% - 600px);
+	left: calc(50% - 200px);
 	z-index: 0;
 }
 
@@ -172,7 +180,8 @@ p {
 #teacher {
 	width: calc(1964px * .22);
 	position: absolute;
-	top: 0;
+	//top: 0;
+	top: calc(50% - 300px);
 	//right: 0;
 	left: calc(50% + 10px);
 	z-index: 1;
@@ -181,7 +190,8 @@ p {
 #students {
 	width: calc(1871px * .22);
 	position: absolute;
-	top: 45%;
+	//top: 45%;
+	top: calc(50% - 10px);
 	//left: 5%;
 	left: calc(50% - 450px);
 	z-index: 1;
