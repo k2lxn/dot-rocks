@@ -35,15 +35,15 @@ html, body, .viewport {
 }
 
 .slide:first-of-type {
-	background: linear-gradient(35deg, #dedda7, #dedda7 50%, #b9c36a 50%);
+	//background: linear-gradient(35deg, #dedda7, #dedda7 50%, #b9c36a 50%);
 }
 
 .slide:nth-of-type(2) {
-	background: linear-gradient(65deg, #d0b9d9, #d0b9d9 35%, #ad86bd 35%); 
+	//background: linear-gradient(65deg, #d0b9d9, #d0b9d9 35%, #ad86bd 35%); 
 }
 
 .slide:nth-of-type(3) {
-	background: linear-gradient(55deg, #b4bcd6, #b4bcd6 60%, #8692bd 60%);
+	//background: linear-gradient(55deg, #b4bcd6, #b4bcd6 60%, #8692bd 60%);
 }
 
 h1, h2, p {
@@ -93,15 +93,20 @@ a:hover{
 	line-height: 1em;
 	font-weight: bold;
 	position: absolute;
-	top: 50%;
+	width: 40px;
+	height: 40px;
+	top: calc(50% - 20px);
 	cursor: default;
 	z-index: 100;
-
-	//background: cyan;
 	padding: 0 10px;
+}
+.btn svg path {
+	stroke: #545454;
+	stroke-width: 10;
 }
 #scroll-left {
 	left: 15px;
+	transform: rotate(180deg);
 	display: none;
 }
 #scroll-right {
