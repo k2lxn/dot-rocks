@@ -1,7 +1,22 @@
 var total_slides = 4;
 var slide_width;
 var curr_slide;
+var animations;
 
+function unbind_scrolling() {
+	//console.log("events unbound");
+	$("#scroll-left").unbind("click");
+	$("#scroll-right").unbind("click");
+	document.removeEventListener( "keydown", keyboard_navigation ) ;
+	animations = false ;
+}
+
+function bind_scrolling() {
+	//console.log("events bound");
+	$("#scroll-left").click( scroll_left ) ;
+	$("#scroll-right").click( scroll_right ) ;
+	document.addEventListener( "keydown", keyboard_navigation ) ;
+}
 
 function scroll_right(){
 	var curr_scroll = $("#slideshow").offset().left;
@@ -9,18 +24,15 @@ function scroll_right(){
 	var scroll_speed = slide_width * .75;
 
 	if ( Math.abs(scroll_to) < $('#slideshow').width() ) {
-		// block other clicks until animation executes (rebind click in animation callback)
-		$("#scroll-left").unbind("click");
-		$("#scroll-right").unbind("click");
+		// block other clicks until animation executes (rebind clicks in stage_illustrations animation callback)
+		unbind_scrolling();
 
 		$('#slideshow').animate({
 			left: scroll_to
 		}, scroll_speed, function(){ 
-			$("#scroll-left").click( scroll_left ) ;
-			$("#scroll-right").click( scroll_right ) ;
+			curr_slide++;
+			stage_illustrations();
 		});
-
-		curr_slide++;
 
 		// hide/show scroll buttons
 		$("#scroll-left").show();
@@ -28,8 +40,6 @@ function scroll_right(){
 			$("#scroll-right").hide();
 		}
 	}
-
-	stage_illustrations();
 }
 
 function scroll_left(){
@@ -38,31 +48,26 @@ function scroll_left(){
 	var scroll_speed = slide_width * .75;
 
 	if ( Math.abs(curr_scroll) >= slide_width ) {
-		// block other clicks until animation executes (rebind click in animation callback)
-		$("#scroll-left").unbind("click");
-		$("#scroll-right").unbind("click");
+		// block other clicks until animation executes (rebind clicks in stage_illustrations animation callback)
+		unbind_scrolling();
 
 		$('#slideshow').animate({
 			left: scroll_to
 		}, scroll_speed, function(){ 
-			$("#scroll-left").click( scroll_left ) ;
-			$("#scroll-right").click( scroll_right ) ;
+			curr_slide--;
+			stage_illustrations();
 		});
 	}
-
-	curr_slide--;
 
 	// hide/show scroll buttons
 	$("#scroll-right").show();
 	if ( Math.abs(curr_scroll) <= slide_width ) {
 		$("#scroll-left").hide();
 	}
-
-	stage_illustrations();
 }
 
 function stage_illustrations() {
-	//console.log("curr_slide: " + curr_slide);
+	console.log("curr_slide: " + curr_slide);
 	$(".illustration").each( function() {
 
 		var duration = slide_width * 1.5 ;
@@ -71,6 +76,7 @@ function stage_illustrations() {
 
 		// disappears
 		if ( $(this).data("disappearon") === curr_slide ) {
+			animations = true ;
 			$(this).data("reappearon", curr_slide - 1 );
 			
 			if ( $(this).data("left")) {
@@ -82,26 +88,34 @@ function stage_illustrations() {
 
 			$(this).animate( animation_data , duration, function(){
 				$(this).css("visibility", "hidden");
+				bind_scrolling();
 			});
 		}
 
 		// reappears
 		else if ( $(this).data("reappearon") === curr_slide )  {
+			animations = true ;
+
 			$(this).css("visibility", "visible");
+			console.log("unhiding " + $(this).attr("id"));
 
 			if ( $(this).data("left")) {
 				animation_data = { left: original_left };
 			}
 			else {
-				console.log("Come back!");
 				animation_data = { opacity : 1 } ;
 			}
 
-			$(this).animate( animation_data, duration );
+			$(this).animate( animation_data, duration, bind_scrolling );
 		}
 		
 
 	});
+
+	// rebind scrolling if not triggered by any animation callback
+	if ( animations !== true ) {
+		bind_scrolling();
+	}
 }
 
 function keyboard_navigation( e ) {
@@ -126,11 +140,7 @@ $(document).ready(function(){
 
 	stage_illustrations();
 	
-	$("#scroll-right").click( scroll_right );
-	$("#scroll-left").click( scroll_left );
-
-	document.addEventListener( "keydown", keyboard_navigation ) ;    
-	
+	//bind_scrolling();
 });
 
 
