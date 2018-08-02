@@ -4,7 +4,6 @@ var curr_slide;
 var animations;
 
 function unbind_scrolling() {
-	//console.log("events unbound");
 	$("#scroll-left").unbind("click");
 	$("#scroll-right").unbind("click");
 	document.removeEventListener( "keydown", keyboard_navigation ) ;
@@ -12,7 +11,6 @@ function unbind_scrolling() {
 }
 
 function bind_scrolling() {
-	//console.log("events bound");
 	$("#scroll-left").click( scroll_left ) ;
 	$("#scroll-right").click( scroll_right ) ;
 	document.addEventListener( "keydown", keyboard_navigation ) ;
@@ -67,7 +65,7 @@ function scroll_left(){
 }
 
 function stage_illustrations() {
-	console.log("curr_slide: " + curr_slide);
+	//console.log("curr_slide: " + curr_slide);
 	$(".illustration").each( function() {
 
 		var duration = slide_width * 1.5 ;
@@ -88,6 +86,7 @@ function stage_illustrations() {
 
 			$(this).animate( animation_data , duration, function(){
 				$(this).css("visibility", "hidden");
+				unbind_scrolling();
 				bind_scrolling();
 			});
 		}
@@ -97,7 +96,6 @@ function stage_illustrations() {
 			animations = true ;
 
 			$(this).css("visibility", "visible");
-			console.log("unhiding " + $(this).attr("id"));
 
 			if ( $(this).data("left")) {
 				animation_data = { left: original_left };
@@ -106,7 +104,10 @@ function stage_illustrations() {
 				animation_data = { opacity : 1 } ;
 			}
 
-			$(this).animate( animation_data, duration, bind_scrolling );
+			$(this).animate( animation_data, duration, function(){
+				unbind_scrolling();
+				bind_scrolling();
+			} );
 		}
 		
 
@@ -139,8 +140,7 @@ $(document).ready(function(){
 	curr_slide = 0;
 
 	stage_illustrations();
-	
-	//bind_scrolling();
+
 });
 
 
