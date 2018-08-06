@@ -30,8 +30,6 @@ html, body, .viewport {
 	height: 100%;
 	position: relative;
 	overflow-x: hidden;
-	z-index: -1;
-	//border-right: 1px solid #000;
 }
 
 .slide:first-of-type {
@@ -121,10 +119,7 @@ a:hover{
 #laptop {
 	width: calc(985px * .22);
 	position: absolute;
-	//top: 55%;
 	top: calc(50% + 10px);
-	//left: 25%;
-	//left: 40%;
 	left: calc(50% - 100px);
 	z-index: 10;
 }
@@ -132,21 +127,15 @@ a:hover{
 #main-figure {
 	width: calc(980px * .22);
 	position: absolute;
-	//top: 29%;
 	top: calc(50% - 150px);
-	//left: 41%;
-	//left: 56%;
 	left: calc(50% + 70px);
-	z-index: 1;
+	z-index: 0;
 }
 
 #coffee-mug {
 	width: calc(281px * .22);
 	position: absolute;
-	//top: 65%;
 	top: calc(50% + 90px);
-	//left: 18%;
-	//left: 32%;
 	left: calc(50% - 180px);
 	z-index: 20;
 
@@ -156,10 +145,7 @@ a:hover{
 #notebook {
 	width: calc(979px * .22);
 	position: absolute;
-	//top: 70%;
 	top: calc(50% + 150px);
-	//left: 55%;
-	//left: 65%;
 	left: calc(50% + 150px);
 	z-index: 20;
 }
@@ -167,30 +153,24 @@ a:hover{
 #bookcase {
 	width: calc(1250px * .22);
 	position: absolute;
-	//top: 5%;
 	top: calc(50% - 310px);
-	//left: 65%;
 	left: calc(50% + 200px);
-	z-index: -1;
+	z-index: -10;
 }
 
 #window {
 	width: calc(1842px * .22);
 	position: absolute;
-	//top: 2%;
 	top: calc(50% - 335px);
-	//left: 6%;
 	left: calc(50% - 400px);
-	z-index: -1;
+	z-index: -10;
 }
 
 #customer {
 	//width: calc(2510px * .22);
 	width: calc(1270px * .22);
 	position: absolute;
-	//top: 10%;
 	top: calc(50% - 280px);
-	//left: 10%;
 	left: calc(50% - 400px);
 	z-index: 1;
 }
@@ -198,41 +178,26 @@ a:hover{
 #computer-towers {
 	width: calc(1300px * .22);
 	position: absolute;
-	//top: 25%;
 	top: calc(50% - 180px);
-	//left: 10%;
 	left: calc(50% - 200px);
 	z-index: -1;
 }
 
-/*
-#teaching {
-	width: calc(4366px * .22);
-	position: absolute;
-	top: 0;
-	left: 0;
-	z-index: 1;
-}
-*/
-
 #teacher {
 	width: calc(1964px * .22);
 	position: absolute;
-	//top: 0;
 	top: calc(50% - 300px);
-	//right: 0;
 	left: calc(50% + 10px);
-	z-index: 1;
+	z-index: -1;
 }
 
 #students {
 	width: calc(1871px * .22);
 	position: absolute;
-	//top: 45%;
 	top: calc(50% - 10px);
-	//left: 5%;
 	left: calc(50% - 450px);
-	z-index: 1;
+	//z-index: 1;
+	z-index: 20;
 
 	-moz-transform: scaleX(-1);
     -o-transform: scaleX(-1);
@@ -248,6 +213,100 @@ a:hover{
 	left: calc(50% + 300px);
 	z-index: -1;
 }
+
+
+
+/* MEDIUM SCREENS */
+@media screen and ( max-width: 730px ) {
+	
+	#laptop {
+		width: calc(985px * .18);
+	}
+
+	#main-figure {
+		width: calc(980px * .18);
+		top: calc(50% - 120px);
+		left: calc(50% + 20px);
+	}
+
+	#coffee-mug {
+		width: calc(281px * .18);
+		top: calc(50% + 70px);
+		left: calc(50% - 180px);
+	}
+
+	#notebook {
+		width: calc(979px * .18);
+		top: calc(50% + 110px);
+		left: calc(50% + 50px);
+	}
+
+	#bookcase {
+		width: calc(1250px * .18);
+		left: calc(50% + 90px);
+	}
+
+	#window {
+		width: calc(1842px * .18);
+		left: calc(50% - 300px);
+	}
+
+
+	#customer {
+		width: calc(1270px * .18);
+		top: calc(50% - 200px);
+		left: calc(50% - 250px);
+	}
+
+	#computer-towers {
+		width: calc(1300px * .18);
+		top: calc(50% - 180px);
+		left: calc(50% - 10px);
+	}
+
+	#teacher {
+		width: calc(1964px * .18);
+		top: calc(50% - 250px);
+		left: calc(50% + 10px);
+	}
+
+	#students {
+		width: calc(1871px * .18);
+		top: calc(50% - 10px);
+		left: calc(50% - 320px);
+	}
+
+	#whiteboard {
+		width: calc(1148px * .18);
+		top: calc(50% - 450px);
+		left: calc(50% + 300px);
+	}
+}
+
+/* SMALL SCREENS */
+@media screen and ( max-width: 450px ) {
+	
+	#laptop {
+		left: calc(50% - 50px);
+	}
+
+	#coffee-mug {
+		left: calc(50% - 110px);
+	}
+
+	#notebook {
+		top: calc(50% + 130px);
+	}
+
+	#customer {
+		left: calc(50% - 230px);
+	}
+
+	#students {
+		left: calc(50% - 250px);
+	}
+}
+
 
 
 

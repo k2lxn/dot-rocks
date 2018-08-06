@@ -132,12 +132,36 @@ function keyboard_navigation( e ) {
     }
 }
 
-
+function set_left_snap_backs() {
+	// Set data-left for medium screens
+	if ( window.innerWidth <= 730 &&  window.innerWidth > 450 ) {
+		//console.log("medium screen");
+		$("#laptop").attr("data-left", -100);
+		$("#coffee-mug").attr("data-left", -180);
+		$("#notebook").attr("data-left", 50);
+	}
+	// and small screens
+	else if ( window.innerWidth <= 450 ) {
+		//console.log("small screen");
+		$("#laptop").attr("data-left", -50);
+		$("#coffee-mug").attr("data-left", -110);
+		$("#notebook").attr("data-left", 130);
+	}
+	// and the off chance that screen is resized from small/medium to large
+	else if ( window.innerWidth > 730 ) {
+		//console.log("large screen");
+		$("#laptop").attr("data-left", -100);
+		$("#coffee-mug").attr("data-left", -190);
+		$("#notebook").attr("data-left", 150);
+	}
+}
 
 /* READY */
 $(document).ready(function(){
 	slide_width = $('#slideshow').width() / total_slides ;
 	curr_slide = 0;
+
+	set_left_snap_backs();
 
 	stage_illustrations();
 
@@ -152,6 +176,8 @@ $(window).resize(function(){
 	// snap to slide edge
 	var slide_index = total_slides * ( Math.abs( document.getElementById("slideshow").offsetLeft ) / (old_slide_width * total_slides) ) ;
 	$("#slideshow").offset({top: 0, left: -( slide_index * slide_width ) });
+
+	set_left_snap_backs();
 	
 });
 
