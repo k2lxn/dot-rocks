@@ -60,6 +60,13 @@ h1 {
 	z-index: 10;
 }
 
+@media screen and ( max-width: 490px ) {
+	h1 {
+		font-size: 2.2em;
+		line-height: 1.6em;
+	}
+}
+
 p {
 	font-size: 1.3em;
 	line-height: 1.5em;
