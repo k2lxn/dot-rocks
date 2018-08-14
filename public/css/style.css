@@ -142,6 +142,37 @@ a:hover{
 	animation-name: rainbowize;
 }
 
+#scroll-right:hover, #scroll-left:hover {
+	animation-duration: .7s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+	animation-timing-function: linear;
+}
+#scroll-right:hover {
+	animation-name: bounce_right;
+}
+#scroll-left:hover {
+	animation-name: bounce_left;
+}
+
+@keyframes bounce_right {
+	from {
+		right: 15px;
+	}
+	to {
+		right: 5px;
+	}
+}
+
+@keyframes bounce_left {
+	from {
+		left: 15px;
+	}
+	to {
+		left: 5px;
+	}
+}
+
 @keyframes rainbowize {
 	from {
 		filter: hue-rotate(0deg);
