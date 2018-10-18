@@ -24,19 +24,25 @@ function scroll_right(){
 	if ( Math.abs(scroll_to) < $('#slideshow').width() ) {
 		// block other clicks until animation executes (rebind clicks in stage_illustrations animation callback)
 		unbind_scrolling();
+		$("#scroll-right").fadeOut();
+		$("#scroll-left").fadeOut();
 
 		$('#slideshow').animate({
 			left: scroll_to
 		}, scroll_speed, function(){ 
 			curr_slide++;
 			stage_illustrations();
+
+			// show scroll buttons (when applicable)
+			$("#scroll-left").fadeIn();
+			if ( Math.abs(scroll_to) < ( $('#slideshow').width() - slide_width) ) {
+				$("#scroll-right").fadeIn();
+				//console.log("callback (scroll_right)");
+			}
 		});
 
-		// hide/show scroll buttons
-		$("#scroll-left").show();
-		if ( Math.abs(scroll_to) >= ( $('#slideshow').width() - slide_width) ) {
-			$("#scroll-right").hide();
-		}
+		
+
 	}
 }
 
@@ -48,19 +54,21 @@ function scroll_left(){
 	if ( Math.abs(curr_scroll) >= slide_width ) {
 		// block other clicks until animation executes (rebind clicks in stage_illustrations animation callback)
 		unbind_scrolling();
-
+		$("#scroll-right").fadeOut();
+		$("#scroll-left").fadeOut();
+		
 		$('#slideshow').animate({
 			left: scroll_to
 		}, scroll_speed, function(){ 
 			curr_slide--;
 			stage_illustrations();
-		});
-	}
 
-	// hide/show scroll buttons
-	$("#scroll-right").show();
-	if ( Math.abs(curr_scroll) <= slide_width ) {
-		$("#scroll-left").hide();
+			// show scroll buttons (when applicable)
+			$("#scroll-right").fadeIn();
+			if ( Math.abs(curr_scroll) > slide_width ) {
+				$("#scroll-left").fadeIn();
+			}
+		});
 	}
 }
 
