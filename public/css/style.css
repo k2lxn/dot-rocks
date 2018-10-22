@@ -13,8 +13,8 @@ html, body, .viewport {
 .viewport {
 	position: fixed;
 	box-sizing: border-box;
-	background: #eee;
-	//border: 2px solid #000;
+	/*background: #eee;*/
+	background: linear-gradient(35deg, rgba(55,137,202, .2), rgba(55,137,202, .2) 50%, #3885c991 50%);
 }
 
 #slideshow {
@@ -33,15 +33,15 @@ html, body, .viewport {
 }
 
 .slide:first-of-type {
-	//background: linear-gradient(35deg, #dedda7, #dedda7 50%, #b9c36a 50%);
+	/*background: linear-gradient(35deg, #dedda7, #dedda7 50%, #b9c36a 50%);*/
 }
 
 .slide:nth-of-type(2) {
-	//background: linear-gradient(65deg, #d0b9d9, #d0b9d9 35%, #ad86bd 35%); 
+	/*background: linear-gradient(65deg, #d0b9d9, #d0b9d9 35%, #ad86bd 35%); */
 }
 
 .slide:nth-of-type(3) {
-	//background: linear-gradient(55deg, #b4bcd6, #b4bcd6 60%, #8692bd 60%);
+	/*background: linear-gradient(55deg, #b4bcd6, #b4bcd6 60%, #8692bd 60%);*/
 }
 
 h1, h2 {
@@ -189,6 +189,7 @@ a:hover{
 /* * * drawings * * */
 #laptop {
 	width: calc(985px * .22);
+	height: auto;
 	position: absolute;
 	top: calc(50% + 10px);
 	left: calc(50% - 100px);
@@ -197,24 +198,31 @@ a:hover{
 
 #main-figure {
 	width: calc(980px * .22);
+	height: auto;
 	position: absolute;
 	top: calc(50% - 150px);
 	left: calc(50% + 70px);
-	z-index: 0;
+	z-index: 1;
 }
 
 #coffee-mug {
 	width: calc(281px * .22);
+	height: auto;
 	position: absolute;
 	top: calc(50% + 90px);
 	left: calc(50% - 180px);
 	z-index: 20;
 
-	//filter: hue-rotate(100deg);
+	/*filter: hue-rotate(100deg);*/
+}
+
+#coffee-mug .outline path {
+	/*stroke: red;*/
 }
 
 #notebook {
 	width: calc(979px * .22);
+	height: auto;
 	position: absolute;
 	top: calc(50% + 150px);
 	left: calc(50% + 150px);
