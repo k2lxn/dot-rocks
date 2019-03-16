@@ -92,12 +92,13 @@ a {
 }
 a:hover{
 	cursor: default;
-	//text-decoration: underline;
-	//text-decoration-color: #fff;
-	color: #d91cab;
+	/*text-decoration: underline;*/
+	/*text-decoration-color: #fff;*/
+	/*color: #d91cab;*/
+	color: rgba( 250, 0, 0, .56);
 	animation-duration: 3s;
 	animation-iteration-count: infinite;
-	animation-name: rainbowize;
+	/*animation-name: rainbowize;*/
 }
 
 .left {
@@ -125,7 +126,8 @@ a:hover{
 }
 .btn svg path {
 	/*stroke: #545454;*/
-	stroke: #d91cab;
+	/*stroke: #d91cab;*/
+	stroke: rgba( 250, 0, 0, .56);
 	stroke-width: 10;
 }
 #scroll-left {
@@ -139,7 +141,7 @@ a:hover{
 #scroll-left, #scroll-right {
 	animation-duration: 3s;
 	animation-iteration-count: infinite;
-	animation-name: rainbowize;
+	/*animation-name: rainbowize;*/
 }
 
 #scroll-right:hover, #scroll-left:hover {
@@ -263,7 +265,7 @@ a:hover{
 }
 
 #teacher {
-	width: calc(1964px * .22);
+	width: calc(2024px * .22);
 	position: absolute;
 	top: calc(50% - 300px);
 	left: calc(50% + 10px);
